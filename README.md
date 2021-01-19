@@ -1,2 +1,4 @@
 # DataService
 DataService is an intuitive and simplistic data saving and loading module that handles absent values and session locking for you. DataService makes only one call to Roblox's DataStoreService in it's entire code, making it relatively lightweight and efficient - feel free to change your data set at any time without needing to worry about clogging up your DataStore queue.
+
+Using the "DataService.new" constructor you are able to initiate a new data set, which will be automatically loaded for you, however if an error arises there is both error handling built-in to the module, as well as the "DataService:Load()" method giving you the option to attempt to load the data again. "DataService:Save()" will handle all of the nitty-gritty for you, all you've got to do is call the method whenever you need your data to be saved.
