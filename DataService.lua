@@ -121,16 +121,10 @@ end
 
 function DataService:Load()
 	if self.Player then
-		if sessionLocks[self.UUID] then
+		if sessionLocks[self.UUID] or FindActiveSessionLock(self.Player) then
 			errorCatch[self.UUID] = true
 			self.Player:Kick("Your data is currently session locked, please rejoin in a few seconds.")
 			return	
-		end
-
-		if FindActiveSessionLock(self.Player) then
-			errorCatch[self.UUID] = true
-			self.Player:Kick("Your data is currently session locked, please rejoin in a few seconds.")
-			return
 		end
 	end
 
